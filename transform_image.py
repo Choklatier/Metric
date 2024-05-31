@@ -1,4 +1,4 @@
-from DnDMetric import Metric,xy_to_polar,polar_to_xy
+from Metric import Metric,xy_to_polar,polar_to_xy
 from scipy.interpolate import CloughTocher2DInterpolator
 from matplotlib.image import imread,imsave
 import numpy as np
@@ -69,7 +69,7 @@ def transform_image(image,metric,pos = [0,0]):
 
 
 if __name__ == "__main__":
-    image_path = "room.jpg"
+    image_path = "corridor.jpg"
     image = imread(image_path)
     
     def f1(x,y):
@@ -81,7 +81,7 @@ if __name__ == "__main__":
     ##print("======")
     new_image = transform_image(image,m)
     ##print(new_image)
-    imsave("trf_room.png",new_image)
+    imsave("trf_corridor.png",new_image)
     
 
 
